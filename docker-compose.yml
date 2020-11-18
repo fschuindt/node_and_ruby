@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  node_and_ruby:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: tail -f /dev/null
