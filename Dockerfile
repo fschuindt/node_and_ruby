@@ -14,7 +14,8 @@ SHELL ["/bin/bash", "-l", "-c"]
 RUN wget --no-verbose -O ruby.tar.gz ${RUBY_RELEASE} && \
     tar -xf ruby.tar.gz && \
     cd /${RUBY} && \
-    ./configure && \
+    ac_cv_func_isnan=yes ac_cv_func_isinf=yes \
+    ./configure --disable-install-doc && \
     make && \
     make test && \
     make install
